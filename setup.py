@@ -7,5 +7,6 @@ setup(
     packages=["djblog", "blog"],
     install_requires=[
         "django",
+        "django-markdownify",
     ],
 )
