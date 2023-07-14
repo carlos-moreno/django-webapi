@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.forms import ModelForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -13,7 +14,7 @@ class PostForm(ModelForm):
         model = Post
         fields = ["title", "content", "published"]
 
-
+@login_required
 def new_post(request):
     if request.method == "POST":
         form = PostForm(request.POST)
